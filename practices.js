@@ -145,15 +145,53 @@ Examples
 '0' and '?' returns -1
 */
 
-function sameCase(a, b) {
-  const letters = /^[a-zA-Z]+$/;
-  if (a.match(letters) && b.match(letters)) {
-    if (a === a.toUpperCase() && b === b.toUpperCase()) return 1;
-    if (a === a.toLowerCase() && b === b.toLowerCase()) return 1;
-    return 0;
-  }
-  return -1;
+// function sameCase(a, b) {
+//   const letters = /^[a-zA-Z]+$/;
+//   if (a.match(letters) && b.match(letters)) {
+//     if (a === a.toUpperCase() && b === b.toUpperCase()) return 1;
+//     if (a === a.toLowerCase() && b === b.toLowerCase()) return 1;
+//     return 0;
+//   }
+//   return -1;
+// }
+
+// console.log(sameCase("C", "B"));
+// console.log(sameCase("A", "s"));
+
+/*
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+invert([]) == []
+You can assume that all values are integers. Do not mutate the input array/list.
+*/
+
+// function invert(array) {
+//   if (!array.length) return [];
+//   return array.map((digit) => {
+//     return digit * -1;
+//   });
+// }
+
+// console.log(invert([1, 2, 3, 4, 5]));
+// console.log(invert([]));
+
+/* You get any card as an argument. Your task is to return the suit of this card (in lowercase).
+
+Our deck (is preloaded):
+
+('3♣') -> return 'clubs'
+('3♦') -> return 'diamonds'
+('3♥') -> return 'hearts'
+('3♠') -> return 'spades'*/
+
+function defineSuit(card) {
+  if (card.includes("♣")) return "clubs";
+  if (card.includes("♦")) return "diamonds";
+  if (card.includes("♥")) return "hearts";
+  if (card.includes("♠")) return "spades";
 }
 
-console.log(sameCase("C", "B"));
-console.log(sameCase("A", "s"));
+console.log(defineSuit("Q♠"));
+console.log(defineSuit("9♦"));
