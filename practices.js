@@ -83,34 +83,77 @@ Examples
 
 The inputs x and y are always greater or equal to 1, so the greatest common divisor will always be an integer that is also greater or equal to 1. */
 
-function mygcd(x, y) {
-  //Divisor will go in BOTH x and Y,
-  //if the number divides by X, we need to check if it divides by Y
-  // Find which large number they have in common
-  //loop thru both numbers and check % -> push
-  //compare - > 2 Arrays
-  //find the highest number in both arrays
+// function mygcd(x, y) {
+//Divisor will go in BOTH x and Y,
+//if the number divides by X, we need to check if it divides by Y
+// Find which large number they have in common
+//loop thru both numbers and check % -> push
+//compare - > 2 Arrays
+//find the highest number in both arrays
 
-  const divisorsX = [];
-  const divisorsY = [];
-  const result = [];
+//   const divisorsX = [];
+//   const divisorsY = [];
+//   const result = [];
 
-  for (let i = 0; i < x; i++) {
-    if (x % i === 0) {
-      divisorsX.push(i);
-    }
+//   for (let i = 0; i < x; i++) {
+//     if (x % i === 0) {
+//       divisorsX.push(i);
+//     }
+//   }
+//   for (let i = 0; i < y; i++) {
+//     if (y % i === 0) {
+//       divisorsY.push(i);
+//     }
+//   }
+//   console.log(divisorsY);
+//   console.log(divisorsX);
+
+//   let highX = Math.max(...divisorsX);
+//   let highY = Math.max(...divisorsY);
+
+//   console.log(highX, highY);
+// }
+// console.log(mygcd(30, 12));
+
+/*
+Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+*/
+
+// function even_or_odd(number) {
+//   return number % 2 === 0 ? "Even" : "Odd";
+// }
+
+// console.log(even_or_odd(2));
+// console.log(even_or_odd(7));
+// console.log(even_or_odd(-42));
+
+/*
+Write a function that will check if two given characters are the same case.
+
+If either of the characters is not a letter, return -1
+If both characters are the same case, return 1
+If both characters are letters, but not the same case, return 0
+Examples
+'a' and 'g' returns 1
+
+'A' and 'C' returns 1
+
+'b' and 'G' returns 0
+
+'B' and 'g' returns 0
+
+'0' and '?' returns -1
+*/
+
+function sameCase(a, b) {
+  const letters = /^[a-zA-Z]+$/;
+  if (a.match(letters) && b.match(letters)) {
+    if (a === a.toUpperCase() && b === b.toUpperCase()) return 1;
+    if (a === a.toLowerCase() && b === b.toLowerCase()) return 1;
+    return 0;
   }
-  for (let i = 0; i < y; i++) {
-    if (y % i === 0) {
-      divisorsY.push(i);
-    }
-  }
-  console.log(divisorsY);
-  console.log(divisorsX);
-
-  let highX = Math.max(...divisorsX);
-  let highY = Math.max(...divisorsY);
-
-  console.log(highX, highY);
+  return -1;
 }
-console.log(mygcd(30, 12));
+
+console.log(sameCase("C", "B"));
+console.log(sameCase("A", "s"));
