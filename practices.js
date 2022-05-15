@@ -186,12 +186,87 @@ Our deck (is preloaded):
 ('3♥') -> return 'hearts'
 ('3♠') -> return 'spades'*/
 
-function defineSuit(card) {
-  if (card.includes("♣")) return "clubs";
-  if (card.includes("♦")) return "diamonds";
-  if (card.includes("♥")) return "hearts";
-  if (card.includes("♠")) return "spades";
+// function defineSuit(card) {
+//   if (card.includes("♣")) return "clubs";
+//   if (card.includes("♦")) return "diamonds";
+//   if (card.includes("♥")) return "hearts";
+//   if (card.includes("♠")) return "spades";
+// }
+
+// console.log(defineSuit("Q♠"));
+// console.log(defineSuit("9♦"));
+
+/*
+Description
+We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+
+Examples
+"1234" --> 1234
+"605"  --> 605
+"1405" --> 1405
+"-7" --> -7
+*/
+
+// const stringToNumber = function (str) {
+//   return parseInt(str);
+// };
+
+// console.log(stringToNumber("1234"));
+
+/* The museum of incredible dull things
+The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+
+However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+
+Task
+Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+Don't change the order of the elements that are left.
+
+Examples
+* Input: [1,2,3,4,5], output= [2,3,4,5]
+* Input: [5,3,2,1,4], output = [5,3,2,4]
+* Input: [2,2,1,2,1], output = [2,2,2,1] */
+
+// function removeSmallest(numbers) {
+//   if (!numbers.length) return [];
+//   const smallest = Math.min(...numbers);
+//   const newNumbers = [...numbers];
+//   const smallestIdx = numbers.indexOf(smallest);
+//   console.log(smallestIdx);
+//   newNumbers.splice(smallestIdx, 1);
+//   return newNumbers;
+// }
+
+// console.log(removeSmallest([1, 2, 3, 4, 5]));
+// console.log(removeSmallest([2, 2, 1, 2, 1]));
+
+/*
+In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+Examples
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5"
+Notes
+All numbers are valid Int32, no need to validate them.
+There will always be at least one number in the input string.
+Output string must be two numbers separated by a single space, and highest number is first.
+*/
+function highAndLow(numbers) {
+  let digitArr = numbers.split(" ");
+  let numberArray = [];
+  let result = [];
+  for (let i = 0; i < digitArr.length; i++) {
+    const digit = digitArr[i];
+    numberArray.push(parseInt(digit));
+  }
+  result.push(Math.max(...numberArray));
+  console.log(Math.max(...numberArray));
+  result.push(Math.min(...numberArray));
+  return result.join(" ");
 }
 
-console.log(defineSuit("Q♠"));
-console.log(defineSuit("9♦"));
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
