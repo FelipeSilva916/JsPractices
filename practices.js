@@ -254,19 +254,54 @@ Notes
 All numbers are valid Int32, no need to validate them.
 There will always be at least one number in the input string.
 Output string must be two numbers separated by a single space, and highest number is first.
+// */
+
+// function highAndLow(numbers) {
+//   let digitArr = numbers.split(" ");
+//   let numberArray = [];
+//   let result = [];
+//   for (let i = 0; i < digitArr.length; i++) {
+//     const digit = digitArr[i];
+//     numberArray.push(parseInt(digit));
+//   }
+//   result.push(Math.max(...numberArray));
+//   console.log(Math.max(...numberArray));
+//   result.push(Math.min(...numberArray));
+//   return result.join(" ");
+// }
+
+// console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+/*
+Given an array of integers.
+
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+
+If the input is an empty array or is null, return an empty array.
+
+Example
+For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
+
+
 */
-function highAndLow(numbers) {
-  let digitArr = numbers.split(" ");
-  let numberArray = [];
-  let result = [];
-  for (let i = 0; i < digitArr.length; i++) {
-    const digit = digitArr[i];
-    numberArray.push(parseInt(digit));
+function countPositivesSumNegatives(input) {
+  let count = 0;
+  let sum = 0;
+  if (input === null) return [];
+  if (input.length === 0) return [];
+  for (let i = 0; i < input.length; i++) {
+    const digit = input[i];
+    if (digit > 0) {
+      count++;
+    } else {
+      sum += digit;
+    }
   }
-  result.push(Math.max(...numberArray));
-  console.log(Math.max(...numberArray));
-  result.push(Math.min(...numberArray));
-  return result.join(" ");
+  return [count, sum];
 }
 
-console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+console.log(
+  countPositivesSumNegatives([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15
+  ])
+);
