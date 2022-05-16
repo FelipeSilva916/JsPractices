@@ -345,18 +345,159 @@ Examples (input -> output)
 '123456789'           -> ''
 'This looks5 grea8t!' -> 'This looks great!'
 Your harried co-workers are looking to you for a solution to take this garbled text and remove all of the numbers. Your program will take in a string and clean out all numeric characters, and return a string with spacing and special characters ~#$%^&!@*():;"'.,? all intact.*/
+// var text = '42px';
+// var integer = parseInt(text, 10);
+// returns 42
+//
+// var str = "Hello^# World/";
+// str.replace(/[^a-zA-Z ]/g, ""); // "Hello World"
 
-function stringClean(s) {
+// function stringClean(s) {
+//   return s.replace(/[0-9]/g, "");
+// }
+
+// console.log(stringClean("(E3at m2e2!!)")); //"(Eat me!!)"
+
+/*
+Convert number to reversed array of digits
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+Example:
+348597 => [7,9,5,8,4,3]
+0 => [0]
+*/
+//
+
+// var num = 123456;
+// var digits = num.toString().split("");
+// var realDigits = digits.map(Number);
+// console.log(realDigits);
+
+// function digitize(n) {
+//   const digits = n.toString().split("");
+//   return digits.map(Number).reverse();
+// }
+
+// console.log(digitize(35231));
+// console.log(digitize(0));
+
+/*
+Kata Task
+I have a cat and a dog.
+I got them at the same time as kitten/puppy. That was humanYears years ago.
+Return their respective ages now as [humanYears,catYears,dogYears]
+
+NOTES:
+humanYears >= 1
+humanYears are whole numbers only
+Cat Years
+15 cat years for first year
++9 cat years for second year
++4 cat years for each year after that
+Dog Years
+15 dog years for first year
++9 dog years for second year
++5 dog years for each year after that
+
+*/
+
+// var humanYearsCatYearsDogYears = function (humanYears) {
+//   if (humanYears === 1) {
+//     return [1, 15, 15];
+//   }
+//   if (humanYears === 2) {
+//     return [2, 24, 24];
+//   }
+//   if (humanYears >= 3) {
+//     let catYears = 24 + (humanYears - 2) * 4;
+//     let dogYears = 24 + (humanYears - 2) * 5;
+//     return [humanYears, catYears, dogYears];
+//   }
+// };
+
+// console.log(humanYearsCatYearsDogYears(2));
+// console.log(humanYearsCatYearsDogYears(10));
+
+// function binToDec(bin) {
+//   return parseInt(bin, 2);
+// }
+// console.log(binToDec("1001001"));
+
+/*
+There was a test in your class and you passed it. Congratulations!
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+Return True if you're better, else False!
+
+Note:
+Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+*/
+
+// function betterThanAverage(classPoints, yourPoints) {
+//   let average =
+//     classPoints.reduce((x, y) => {
+//       return x + y;
+//     }) / classPoints.length;
+//   console.log(average);
+//   return yourPoints > average ? true : false;
+// }
+
+// console.log(betterThanAverage([2, 3], 5));
+// console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9));
+
+/*Write a function that returns a string in which firstname is swapped with last name.
+
+* nameShuffler('john McClane'); => "McClane john"
+ */
+
+/*Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
+
+Unfortunately, they have now left and the code they gave you doesn't work. Fix the helper function they wrote so that it works as intended (i.e. make the first character in the string "word" upper case).
+
+Don't worry about numbers, special characters, or non-string types being passed to the function. The string lengths will be from 1 character up to 10 characters, but will never be empty. */
+
+// function capitalizeWord(word) {
+//   let split = word.split("");
+//   return split[0].toUpperCase() + word.slice(1);
+// }
+
+// console.log(capitalizeWord("word"));
+
+/* Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+
+[Make sure you type the exact thing I wrote or the program may not execute properly]*/
+
+// function greet(name) {
+//   return `Hello, ${name} how are you doing today?`;
+// }
+
+/*
+write me a function stringy that takes a size and returns a string of alternating '1s' and '0s'.
+
+the string should start with a 1.
+
+a string with size 6 should return :'101010'.
+
+with size 4 should return : '1010'.
+
+with size 12 should return : '101010101010'.
+
+The size will always be positive and will only use whole numbers.
+*/
+
+function stringy(size) {
   let result = [];
-  for (let i = 0; i < s.length; i++) {
-    let character = s[i];
-    console.log(character);
-    if (isNaN(character)) {
-      console.log(character);
-      result.push(character);
+  for (let i = 0; i < size; i++) {
+    if (i % 2 === 0) {
+      result.push(1);
+    } else {
+      result.push(0);
     }
   }
-  return result;
+  return result.join("");
 }
 
-console.log(stringClean("(E3at m2e2!!)")); //"(Eat me!!)"
+console.log(stringy(3));
+console.log(stringy(6));
