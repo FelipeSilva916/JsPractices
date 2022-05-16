@@ -283,25 +283,80 @@ Example
 For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
 
 
-*/
-function countPositivesSumNegatives(input) {
-  let count = 0;
-  let sum = 0;
-  if (input === null) return [];
-  if (input.length === 0) return [];
-  for (let i = 0; i < input.length; i++) {
-    const digit = input[i];
-    if (digit > 0) {
-      count++;
-    } else {
-      sum += digit;
+// */
+// function countPositivesSumNegatives(input) {
+//   let count = 0;
+//   let sum = 0;
+//   if (input === null) return [];
+//   if (input.length === 0) return [];
+//   for (let i = 0; i < input.length; i++) {
+//     const digit = input[i];
+//     if (digit > 0) {
+//       count++;
+//     } else {
+//       sum += digit;
+//     }
+//   }
+//   return [count, sum];
+// }
+
+// console.log(
+//   countPositivesSumNegatives([
+//     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15
+//   ])
+// );
+
+/*You are given array of integers, your task will be to count all pairs in that array and return their count.
+
+Notes:
+
+Array can be empty or contain only one value; in this case return 0
+If there are more pairs of a certain number, count each pair only once. E.g.: for [0, 0, 0, 0] the return value is 2 (= 2 pairs of 0s)
+Random tests: maximum array length is 1000, range of values in array is between 0 and 1000
+Examples
+[1, 2, 5, 6, 5, 2]  -->  2
+...because there are 2 pairs: 2 and 5
+
+[1, 2, 2, 20, 6, 20, 2, 6, 2]  -->  4
+...because there are 4 pairs: 2, 20, 6 and 2 (again) */
+
+// function duplicates(array) {
+//   if (array.length === 0 || array.length === 1) return 0;
+//   array.sort();
+//   console.log(array);
+//   let count = 0;
+//   for (let i = 0; i < array.length - 1; i++) {
+//     if (array[i] === array[i + 1]) {
+//       count++;
+//       i++;
+//       console.log(i);
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(duplicates([1, 2, 2, 20, 6, 20, 2, 6, 2]));
+// console.log(duplicates([0, 0, 0, 0, 0, 0, 0]));
+
+/* Your boss decided to save money by purchasing some cut-rate optical character recognition software for scanning in the text of old novels to your database. At first it seems to capture words okay, but you quickly notice that it throws in a lot of numbers at random places in the text.
+
+Examples (input -> output)
+'! !'                 -> '! !'
+'123456789'           -> ''
+'This looks5 grea8t!' -> 'This looks great!'
+Your harried co-workers are looking to you for a solution to take this garbled text and remove all of the numbers. Your program will take in a string and clean out all numeric characters, and return a string with spacing and special characters ~#$%^&!@*():;"'.,? all intact.*/
+
+function stringClean(s) {
+  let result = [];
+  for (let i = 0; i < s.length; i++) {
+    let character = s[i];
+    console.log(character);
+    if (isNaN(character)) {
+      console.log(character);
+      result.push(character);
     }
   }
-  return [count, sum];
+  return result;
 }
 
-console.log(
-  countPositivesSumNegatives([
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15
-  ])
-);
+console.log(stringClean("(E3at m2e2!!)")); //"(Eat me!!)"
