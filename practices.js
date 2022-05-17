@@ -487,17 +487,115 @@ with size 12 should return : '101010101010'.
 The size will always be positive and will only use whole numbers.
 */
 
-function stringy(size) {
-  let result = [];
-  for (let i = 0; i < size; i++) {
-    if (i % 2 === 0) {
-      result.push(1);
-    } else {
-      result.push(0);
-    }
-  }
-  return result.join("");
-}
+// function stringy(size) {
+//   let result = [];
+//   for (let i = 0; i < size; i++) {
+//     if (i % 2 === 0) {
+//       result.push(1);
+//     } else {
+//       result.push(0);
+//     }
+//   }
+//   return result.join("");
+// }
 
-console.log(stringy(3));
-console.log(stringy(6));
+// console.log(stringy(3));
+// console.log(stringy(6));
+
+/*
+In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base.
+
+For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+*/
+
+// function findMultiples(integer, limit) {
+//   let result = [];
+//   for (let i = integer; i <= limit; i++) {
+//     if (i % integer === 0) {
+//       result.push(i);
+//     }
+//   }
+//   return result;
+// }
+// console.log(findMultiples(5, 25)); //[5, 10, 15, 20, 25]
+// console.log(findMultiples(4, 27)); //[4, 8, 12, 16, 20, 24]
+
+/*Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+The function takes a name as its only argument, and returns one of the following strings:
+
+name + " plays banjo"
+name + " does not play banjo"
+Names given are always valid strings. */
+
+// function areYouPlayingBanjo(name) {
+//   if (name.startsWith("R") || name.startsWith("r")) {
+//     return `${name} plays banjo`;
+//   } else {
+//     return `${name} does not play banjo`;
+//   }
+// }
+
+// console.log(areYouPlayingBanjo("Adam"));
+// console.log(areYouPlayingBanjo("Ringo"));
+
+/*
+Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+Example:
+
+["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+None of the arrays will be empty, so you don't have to worry about that!
+// */
+// function removeEveryOther(arr) {
+//   let result = [];
+//   for (let i = 0; i < arr.length; i += 2) {
+//     result.push(arr[i]);
+//   }
+//   return result;
+// }
+// console.log(removeEveryOther(["Hello", "Goodbye", "Hello Again"])); //['Hello', 'Hello Again']
+// console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); //[1, 3, 5, 7, 9]
+
+/*
+Rock Paper Scissors
+Let's play! You have to return which player won! In case of a draw return Draw!.
+
+Examples:
+
+rps('scissors','paper') // Player 1 won!
+rps('scissors','rock') // Player 2 won!
+rps('paper','paper') // Draw!
+*/
+
+const rps = (p1, p2) => {
+  if (p1 === "rock" && p2 === "paper") {
+    return "Player 2 won!";
+  }
+  if (p1 === "rock" && p2 === "scissors") {
+    return "Player 1 won!";
+  }
+  if (p1 === "rock" && p2 === "rock") {
+    return "Draw!";
+  }
+  if (p1 === "paper" && p2 === "paper") {
+    return "Draw!";
+  }
+  if (p1 === "paper" && p2 === "rock") {
+    return "Player 1 won!";
+  }
+  if (p1 === "paper" && p2 === "scissors") {
+    return "Player 2 won!";
+  }
+  if (p1 === "scissors" && p2 === "scissors") {
+    return "Draw!";
+  }
+  if (p1 === "scissors" && p2 === "rock") {
+    return "Player 2 won!";
+  }
+  if (p1 === "scissors" && p2 === "paper") {
+    return "Player 1 won!";
+  }
+};
