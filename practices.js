@@ -570,32 +570,128 @@ rps('scissors','rock') // Player 2 won!
 rps('paper','paper') // Draw!
 */
 
-const rps = (p1, p2) => {
-  if (p1 === "rock" && p2 === "paper") {
-    return "Player 2 won!";
+// const rps = (p1, p2) => {
+//   if (p1 === "rock" && p2 === "paper") {
+//     return "Player 2 won!";
+//   }
+//   if (p1 === "rock" && p2 === "scissors") {
+//     return "Player 1 won!";
+//   }
+//   if (p1 === "rock" && p2 === "rock") {
+//     return "Draw!";
+//   }
+//   if (p1 === "paper" && p2 === "paper") {
+//     return "Draw!";
+//   }
+//   if (p1 === "paper" && p2 === "rock") {
+//     return "Player 1 won!";
+//   }
+//   if (p1 === "paper" && p2 === "scissors") {
+//     return "Player 2 won!";
+//   }
+//   if (p1 === "scissors" && p2 === "scissors") {
+//     return "Draw!";
+//   }
+//   if (p1 === "scissors" && p2 === "rock") {
+//     return "Player 2 won!";
+//   }
+//   if (p1 === "scissors" && p2 === "paper") {
+//     return "Player 1 won!";
+//   }
+// };
+
+/*
+Create a method each_cons that accepts a list and a number n, and returns cascading subsets of the list of size n, like so:
+
+each_cons([1,2,3,4], 2)
+  #=> [[1,2], [2,3], [3,4]]
+
+each_cons([1,2,3,4], 3)
+  #=> [[1,2,3],[2,3,4]]
+
+As you can see, the lists are cascading; ie, they overlap, but never out of order.
+*/
+
+//create a map on the array
+//map(element, index) <- we want the index
+//slice, start at 'index' of the map, second number is index + n
+//filter out element.length === n
+
+// function eachCons(array, n) {
+//   let mapped = array.map((x, index) => {
+//     return array.slice(index, index + n);
+//   });
+//   return mapped.filter((x) => x.length === n);
+// }
+
+// const lst = [3, 5, 8, 13];
+// console.log(eachCons([3, 5, 8, 13], 1));
+// console.log(eachCons(lst, 2));
+// console.log(eachCons(lst, 3));
+
+/*
+Your task is to create a function that does four basic mathematical operations.
+
+The function should take three arguments - operation(string/char), value1(number), value2(number).
+The function should return result of numbers after applying the chosen operation.
+
+Examples(Operator, value1, value2) --> output
+('+', 4, 7) --> 11
+('-', 15, 18) --> -3
+('*', 5, 5) --> 25
+('/', 49, 7) --> 7
+*/
+
+// function basicOp(operation, value1, value2) {
+//   if (operation === "+") return value1 + value2;
+//   if (operation === "-") return value1 - value2;
+//   if (operation === "*") return value1 * value2;
+//   if (operation === "/") return value1 / value2;
+// }
+
+/*Write a function called repeatStr which repeats the given string string exactly n times.
+
+repeatStr(6, "I") // "IIIIII"
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello" */
+
+// function repeatStr(n, s) {
+//   let string = "";
+//   console.log(s);
+
+//   for (let i = 0; i <= n; i++) {
+//     string += s;
+//   }
+
+//   return string;
+// }
+// console.log(repeatStr(5, "#"));
+
+/*
+Issue
+Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
+
+The pipes connecting your level's stages together need to be fixed before you receive any more complaints.
+
+Pipes list is correct when each pipe after the first index is greater (+1) than the previous one, and that there is no duplicates.
+
+Task
+Given the a list of numbers, return a fixed list so that the values increment by 1 for each index from the minimum value up to the maximum value (both included).
+
+Example
+Input: 1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
+*/
+//return Set
+
+function pipeFix(numbers) {
+  let result = [];
+  let max = Math.max(...numbers);
+  let min = Math.min(...numbers);
+  for (let i = min; i <= max; i++) {
+    result.push(i);
   }
-  if (p1 === "rock" && p2 === "scissors") {
-    return "Player 1 won!";
-  }
-  if (p1 === "rock" && p2 === "rock") {
-    return "Draw!";
-  }
-  if (p1 === "paper" && p2 === "paper") {
-    return "Draw!";
-  }
-  if (p1 === "paper" && p2 === "rock") {
-    return "Player 1 won!";
-  }
-  if (p1 === "paper" && p2 === "scissors") {
-    return "Player 2 won!";
-  }
-  if (p1 === "scissors" && p2 === "scissors") {
-    return "Draw!";
-  }
-  if (p1 === "scissors" && p2 === "rock") {
-    return "Player 2 won!";
-  }
-  if (p1 === "scissors" && p2 === "paper") {
-    return "Player 1 won!";
-  }
-};
+  return result;
+}
+
+console.log(pipeFix([1, 2, 3, 5, 6, 8, 9])); //[1,2,3,4,5,6,7,8,9]
+console.log(pipeFix([1, 2, 3, 12])); //[1,2,3,4,5,6,7,8,9,10,11,12]
+console.log(pipeFix([-1, 4]));
