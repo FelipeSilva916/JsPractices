@@ -711,3 +711,90 @@ Given a non-negative integer, 3 for example, return a string with a murmur: "1 s
 //   return sheepStr;
 // };
 // console.log(countSheep(3));
+
+/*You probably know the 42 number as "The answer to life, the universe and everything" according to Douglas Adams' "The Hitchhiker's Guide to the Galaxy". For Freud, the answer was quite different.
+
+In the society he lived in, people-women in particular- had to repress their sexual needs and desires. This was simply how the society was at the time. Freud then wanted to study the illnesses created by this, and so he digged to the root of their desires. This led to some of the most important psychoanalytic theories to this day, Freud being the father of psychoanalysis.
+
+Now, basically, when a person hears about Freud, s/he hears "sex" because for Freud, everything was basically related to, and explained by sex.
+
+In this kata, the toFreud() function will take a string as its argument, and return a string with every word replaced by the explanation to everything, according to Freud. Note that an empty string, or no arguments, should result in the ouput being ""(empty string).
+
+ */
+
+// function toFreud(string) {
+//   let word = string.split(" ");
+//   let result = [];
+//   if (string.length === 0) return "";
+//   for (let i = 0; i < word.length; i++) {
+//     const element = word[i];
+//     console.log(element);
+//     result.push(element.replace(element, "sex"));
+//   }
+//   return result.join(" ");
+// }
+
+// console.log(toFreud("This is a test"));
+// console.log(toFreud(""));
+
+/*
+Write function bmi that calculates body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+
+if bmi <= 25.0 return "Normal"
+
+if bmi <= 30.0 return "Overweight"
+
+if bmi > 30 return "Obese"
+*/
+
+// function bmi(weight, height) {
+//   let bmi = weight / height ** 2;
+//   console.log(bmi);
+//   if (bmi <= 18.5) return "Underweight";
+//   if (bmi <= 25) return "Normal";
+//   if (bmi <= 30) return "Overweight";
+//   if (bmi > 30) return "Obese";
+// }
+// console.log(bmi(80, 1.8));
+
+/* You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+
+Write a program that returns the girl's age (0-9) as an integer.
+
+Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.*/
+
+// function getAge(inputString) {
+// return the girl's correct age as an integer. Happy coding :)
+//   return parseInt(inputString[0]);
+// }
+// console.log(getAge("4 years old")); //4
+
+/*ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+If the function is passed a valid PIN string, return true, else return false.
+
+Examples (Input --> Output)
+"1234"   -->  true
+"12345"  -->  false
+"a234"   -->  false */
+
+function validatePIN(pin) {
+  const nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  if (pin.length !== 4 && pin.length !== 6) {
+    return false;
+  }
+  console.log(pin);
+  let arr = pin.split("");
+  console.log(arr);
+
+  for (let i = 0; i < arr.length; i++) {
+    const digit = arr[i];
+    if(arr.every())
+  }
+}
+
+// console.log(validatePIN("1"));
+// console.log(validatePIN("00000000"));
+console.log(validatePIN("1234"));
