@@ -680,18 +680,34 @@ Given the a list of numbers, return a fixed list so that the values increment by
 Example
 Input: 1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
 */
-//return Set
+// //return Set
 
-function pipeFix(numbers) {
-  let result = [];
-  let max = Math.max(...numbers);
-  let min = Math.min(...numbers);
-  for (let i = min; i <= max; i++) {
-    result.push(i);
-  }
-  return result;
-}
+// function pipeFix(numbers) {
+//   let result = [];
+//   let max = Math.max(...numbers);
+//   let min = Math.min(...numbers);
+//   for (let i = min; i <= max; i++) {
+//     result.push(i);
+//   }
+//   return result;
+// }
 
-console.log(pipeFix([1, 2, 3, 5, 6, 8, 9])); //[1,2,3,4,5,6,7,8,9]
-console.log(pipeFix([1, 2, 3, 12])); //[1,2,3,4,5,6,7,8,9,10,11,12]
-console.log(pipeFix([-1, 4]));
+// console.log(pipeFix([1, 2, 3, 5, 6, 8, 9])); //[1,2,3,4,5,6,7,8,9]
+// console.log(pipeFix([1, 2, 3, 12])); //[1,2,3,4,5,6,7,8,9,10,11,12]
+// console.log(pipeFix([-1, 4]));
+
+/*
+If you can't sleep, just count sheep!!
+
+Task:
+Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+*/
+
+// var countSheep = function (num) {
+//   let sheepStr = "";
+//   for (let i = 0; i < num; i++) {
+//     sheepStr += `${i + 1} sheep...`;
+//   }
+//   return sheepStr;
+// };
+// console.log(countSheep(3));
